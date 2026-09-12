@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('mobile layout keeps dark background and no horizontal overflow', async ({ page }) => {
-  await page.goto('http://127.0.0.1:5173/');
+  await page.goto('/');
 
   const bodyBackground = await page.$eval('body', (el) => getComputedStyle(el).backgroundColor);
   expect(bodyBackground).not.toBe('rgb(255, 255, 255)');
